@@ -10,6 +10,7 @@ export const translations: Record<Lang, TranslationDict> = {
       overview: 'Overview',
       instruments: 'Instrumentation',
       charts: 'Charts',
+        descent: "Descent",
     },
     topbar: {
       mission: 'Galileo Atmospheric Probe',
@@ -17,8 +18,8 @@ export const translations: Record<Lang, TranslationDict> = {
     },
     hero: {
       eyebrow: 'Entry telemetry archive',
-      titleLine1: 'How Galileo felt',
-      titleLine2: 'Jupiter hit back',
+      titleLine1: "Galileo's Final Descent",
+      titleLine2: 'Probing Jupiter',
       body: 'On 7 December 1995, a 339-kilogram probe hit Jupiter\u2019s atmosphere faster than anything humans had built before. Three accelerometers on its heat shield recorded every jolt of the fall. This dashboard turns that raw telemetry into something you can actually read.',
       statVelocity: 'Entry velocity',
       statPeakG: 'Peak deceleration',
@@ -97,6 +98,7 @@ export const translations: Record<Lang, TranslationDict> = {
       overview: 'Aper\u00e7u',
       instruments: 'Instrumentation',
       charts: 'Graphiques',
+        descent: "Descente",
     },
     topbar: {
       mission: 'Sonde atmosph\u00e9rique Galileo',
@@ -104,8 +106,8 @@ export const translations: Record<Lang, TranslationDict> = {
     },
     hero: {
       eyebrow: 'Archive de t\u00e9l\u00e9m\u00e9trie d\u2019entr\u00e9e',
-      titleLine1: 'Comment Galileo a senti',
-      titleLine2: 'la riposte de Jupiter',
+      titleLine1: 'La descente finale de Galileo',
+      titleLine2: 'Sonder Jupiter',
       body: 'Le 7 d\u00e9cembre 1995, une sonde de 339 kilogrammes a percut\u00e9 l\u2019atmosph\u00e8re de Jupiter plus vite que tout ce que l\u2019humain avait construit auparavant. Trois acc\u00e9l\u00e9rom\u00e8tres fix\u00e9s \u00e0 son bouclier thermique ont enregistr\u00e9 chaque secousse de la chute. Ce tableau de bord transforme cette t\u00e9l\u00e9m\u00e9trie brute en quelque chose de lisible.',
       statVelocity: 'Vitesse d\u2019entr\u00e9e',
       statPeakG: 'D\u00e9c\u00e9l\u00e9ration maximale',

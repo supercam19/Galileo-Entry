@@ -196,19 +196,20 @@ const DescentDepthChart = () => {
   const { t, formatNumber } = useLanguage();
 
   return (
-    <Box component="section" sx={{ py: { xs: 8, md: 12 } }}>
+    <Box component="section" id="descent" sx={{ py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-        <Card variant="outlined" sx={{ p: 3, bgcolor: 'background.paper', borderColor: 'divider' }}>
-          <Stack spacing={3}>
-            <Stack spacing={0.5}>
+          <Stack spacing={0.5} sx={{ mb: 6, maxWidth: 640 }}>
               <Typography variant="overline" sx={{ color: 'secondary.main', letterSpacing: '0.2em' }}>
-                {t('descent.eyebrow')}
+                  {t('descent.eyebrow')}
               </Typography>
-              <Typography variant="h6">{t('descent.title')}</Typography>
-              <Typography variant="body2" color="text.secondary">
+              <Typography variant="h3">{t('descent.title')}</Typography>
+          </Stack>
+        <Card variant="outlined" sx={{ p: 3, bgcolor: 'background.paper', borderColor: 'divider' }}>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 3}}>
                 {t('descent.intro')}
-              </Typography>
-            </Stack>
+            </Typography>
+          <Stack spacing={3}>
+
 
             <Stack direction="row" spacing={2} sx={{ flexWrap: 'wrap' }}>
               <TelemetryStat label={t('descent.statDepth')} value={formatNumber(descentDepthKm)} unit="km" />
