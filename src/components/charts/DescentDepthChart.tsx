@@ -1,7 +1,7 @@
 import { Box, Card, Container, Stack, Typography } from '@mui/material';
-import { useLanguage } from '../i18n/LanguageContext';
-import TelemetryStat from './TelemetryStat';
-import { jupiterPalette } from '../theme/theme';
+import { useLanguage } from '../../i18n/LanguageContext';
+import TelemetryStat from '../TelemetryStat';
+import { jupiterPalette } from '../../theme/theme';
 
 const descentDepthKm = 160;
 const depthSharePercent = 0.22;
@@ -21,7 +21,7 @@ const globeCx = 70;
 const globeCy = 140;
 const globeR = 55;
 
-const markerAngleRad = 0;
+const markerAngleRad = Math.PI / 2;
 const markerX = globeCx + globeR * Math.sin(markerAngleRad);
 const markerY = globeCy - globeR * Math.cos(markerAngleRad);
 const markerHalfSize = 7;
@@ -31,7 +31,7 @@ const zoomBoxY = 20;
 const zoomBoxW = 210;
 const zoomBoxH = 220;
 
-const magnification = Math.round(zoomBoxW / (markerHalfSize * 2));
+const magnification = 300 //Math.round(zoomBoxW / (markerHalfSize * 2));
 
 const labelAreaHeight = 36;
 const edgeY = zoomBoxY + labelAreaHeight;
@@ -43,6 +43,17 @@ const probeCircleR = 7;
 const bracketTick = 8;
 const bracketGap = 8;
 const bracketX = probeCircleX - probeCircleR - bracketGap - bracketTick;
+
+const flightPathAngleDeg = 8.6;
+const flightPathAngleRad = (flightPathAngleDeg * Math.PI) / 180;
+const flightPathDirX = Math.cos(flightPathAngleRad);
+const flightPathDirY = -Math.sin(flightPathAngleRad);
+const flightPathStartX = probeCircleX + probeCircleR * flightPathDirX;
+const flightPathStartY = probeCircleY + probeCircleR * flightPathDirY;
+const flightPathEndX = zoomBoxX + zoomBoxW;
+const flightPathEndY = probeCircleY + (flightPathEndX - probeCircleX) * (flightPathDirY / flightPathDirX);
+const flightPathLabelX = (flightPathStartX + flightPathEndX) / 2;
+const flightPathLabelY = (flightPathStartY + flightPathEndY) / 2 - 9;
 
 const DepthZoomVisual = () => {
   const { t, formatNumber } = useLanguage();
@@ -116,7 +127,7 @@ const DepthZoomVisual = () => {
                   ${zoomBoxX} ${edgeY + zoomBoxH - labelAreaHeight - 10}
                 Z
               `}
-            fill={jupiterPalette.cream}
+            fill={jupiterPalette.rustBright}
           />
         <rect x={zoomBoxX} y={edgeY} width={zoomBoxW} height={zoomBoxH - labelAreaHeight} fill="url(#atmosphereShade)" />
         <rect
@@ -156,7 +167,7 @@ const DepthZoomVisual = () => {
           y={(edgeY + probeCircleY) / 2 + 4}
           textAnchor="end"
           fill={jupiterPalette.void}
-          stroke={jupiterPalette.cream}
+          stroke={jupiterPalette.rustBright}
           strokeWidth="3"
           paintOrder="stroke"
           fontFamily="IBM Plex Mono"
@@ -174,11 +185,37 @@ const DepthZoomVisual = () => {
           stroke={jupiterPalette.void}
           strokeWidth="2"
         />
+        <line
+          x1={flightPathStartX}
+          y1={flightPathStartY}
+          x2={flightPathEndX}
+          y2={flightPathEndY}
+          stroke={jupiterPalette.duskLight}
+          strokeWidth="1.5"
+          strokeDasharray="4 3"
+          opacity="0.70"
+        />
         <text
-          x={probeCircleX + probeCircleR + 10}
-          y={probeCircleY + 4}
+          x={flightPathLabelX}
+          y={flightPathLabelY}
+          textAnchor="middle"
+          transform={`rotate(${-flightPathAngleDeg}, ${flightPathLabelX}, ${flightPathLabelY})`}
           fill={jupiterPalette.void}
-          stroke={jupiterPalette.cream}
+          stroke={jupiterPalette.rustBright}
+          strokeWidth="3"
+          paintOrder="stroke"
+          fontFamily="IBM Plex Mono"
+          fontWeight="600"
+          opacity="0.70"
+          fontSize="10"
+        >
+          {t('descent.flightPathLabel')}
+        </text>
+        <text
+          x={probeCircleX}
+          y={probeCircleY + 20}
+          fill={jupiterPalette.void}
+          stroke={jupiterPalette.rustBright}
           strokeWidth="3"
           paintOrder="stroke"
           fontFamily="IBM Plex Sans"

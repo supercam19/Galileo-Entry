@@ -1,6 +1,6 @@
-import z1Raw from './e03z1.tab?raw';
-import z2Raw from './e03z2.tab?raw';
-import anRaw from './e03an.tab?raw';
+import z1Raw from './raw/e03z1.tab?raw';
+import z2Raw from './raw/e03z2.tab?raw';
+import anRaw from './raw/e03an.tab?raw';
 import { parseAccelFile } from './parseAccelFile';
 import type { AccelSample } from './parseAccelFile';
 

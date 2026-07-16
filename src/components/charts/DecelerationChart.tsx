@@ -9,10 +9,10 @@ import {
   YAxis,
 } from 'recharts';
 import { Box, FormControlLabel, Stack, Switch, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material';
-import { useLanguage } from '../i18n/LanguageContext';
-import { z1Samples, z2Samples } from '../data/accelDatasets';
-import { isSuspectTime } from '../data/suspectSamples';
-import { jupiterPalette } from '../theme/theme';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { z1Samples, z2Samples } from '../../data/accelDatasets';
+import { isSuspectTime } from '../../data/suspectSamples';
+import { jupiterPalette } from '../../theme/theme';
 
 type ScaleMode = 'linear' | 'log';
 type SeriesKey = 'z1' | 'z2';

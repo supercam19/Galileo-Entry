@@ -5,7 +5,7 @@ import InstrumentationSection from '../components/InstrumentationSection';
 import ChartsSection from '../components/ChartsSection';
 import SiteFooter from '../components/SiteFooter';
 import { jupiterPalette } from '../theme/theme';
-import DescentDepthChart from "../components/DescentDepthChart";
+import DescentDepthChart from "../components/charts/DescentDepthChart";
 
 const Dashboard = () => (
   <Box
@@ -26,7 +26,6 @@ const Dashboard = () => (
   >
     <TopBar />
     <HeroSection />
-    <InstrumentationSection />
     <ChartsSection />
     <DescentDepthChart />
     <SiteFooter />

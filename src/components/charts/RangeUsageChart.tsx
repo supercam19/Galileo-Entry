@@ -1,11 +1,11 @@
 import { useMemo, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { Box, Stack, ToggleButton, ToggleButtonGroup } from '@mui/material';
-import { useLanguage } from '../i18n/LanguageContext';
-import { z1Samples, z2Samples, latSamples } from '../data/accelDatasets';
-import { computeRangeCounts } from '../data/rangeUsage';
-import { instrumentSpecs } from '../data/instrumentSpecs';
-import { jupiterPalette } from '../theme/theme';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { z1Samples, z2Samples, latSamples } from '../../data/accelDatasets';
+import { computeRangeCounts } from '../../data/rangeUsage';
+import { instrumentSpecs } from '../../data/instrumentSpecs';
+import { jupiterPalette } from '../../theme/theme';
 
 type Channel = 'z1' | 'z2' | 'lat';
 type Mode = 'count' | 'share';

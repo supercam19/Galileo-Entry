@@ -41,9 +41,7 @@ const TopBar = () => {
           <Button onClick={() => scrollToSection('overview')} sx={{ color: 'text.secondary' }}>
             {t('nav.overview')}
           </Button>
-          <Button onClick={() => scrollToSection('instruments')} sx={{ color: 'text.secondary' }}>
-            {t('nav.instruments')}
-          </Button>
+
           <Button onClick={() => scrollToSection('charts')} sx={{ color: 'text.secondary' }}>
             {t('nav.charts')}
           </Button>
