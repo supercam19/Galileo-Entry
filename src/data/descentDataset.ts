@@ -1,3 +1,4 @@
+// @ts-ignore
 import descentRaw from './raw/descent.tab?raw';
 import { parseDescentFile } from './parseDescentFile';
 import type { DescentSample } from './parseDescentFile';
