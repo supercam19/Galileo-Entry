@@ -1,7 +1,6 @@
 import { Box } from '@mui/material';
 import TopBar from '../components/TopBar';
 import HeroSection from '../components/HeroSection';
-import InstrumentationSection from '../components/InstrumentationSection';
 import ChartsSection from '../components/ChartsSection';
 import SiteFooter from '../components/SiteFooter';
 import { jupiterPalette } from '../theme/theme';
