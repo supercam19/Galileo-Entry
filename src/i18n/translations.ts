@@ -57,7 +57,7 @@ export const translations: Record<Lang, TranslationDict> = {
           densityButton: 'Density',
           gravityButton: 'Gravity',
           temperatureGradientButton: 'Temperature gradient',
-          
+          compositionSuspect: 'Some data omitted - simplifed representation',
           eyebrow: 'Chart bay',
           title: 'A view into the fall',
           chart1Title: 'Deceleration profile',
@@ -178,7 +178,7 @@ export const translations: Record<Lang, TranslationDict> = {
           densityButton: 'Densité',
           gravityButton: 'Gravité',
           temperatureGradientButton: 'Gradient de température',
-
+            compositionSuspect: 'Certaines données omises – représentation simplifiée',
           eyebrow: 'Baie de graphiques',
         title: 'Un regard sur la chute',
         chart1Title: 'Profil de décélération',

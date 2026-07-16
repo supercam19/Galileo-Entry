@@ -1,6 +1,6 @@
 ﻿import { useMemo, useState } from 'react';
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { Box, Stack, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import {Box, Stack, ToggleButton, ToggleButtonGroup, Typography} from '@mui/material';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { ratioEntries } from '../../data/ratiosDataset';
 import { jupiterPalette } from '../../theme/theme';
@@ -89,6 +89,9 @@ const CompositionChart = () => {
                         )}
                     </BarChart>
                 </ResponsiveContainer>
+                <Typography variant="caption" color="text.secondary">
+                    {t('charts.compositionSuspect')}
+                </Typography>
             </Box>
         </Stack>
     );
